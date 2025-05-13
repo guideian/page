@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact guideian.app for support, questions, or business inquiries. Find our email, phone, and address here.">
+    <title>Contact - guideian.app</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .contact-content {
+            max-width: 600px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .contact-section {
+            margin-bottom: 32px;
+        }
+        .contact-section h1 {
+            color: var(--secondary-color);
+            margin-bottom: 24px;
+            font-size: 2rem;
+        }
+        .contact-details p {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .contact-details a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-nav"></div>
+    <main>
+        <div class="contact-content">
+            <div class="contact-section">
+                <h1>Contact</h1>
+                <div class="contact-details">
+                    <p><strong>Business Name:</strong> guideian.app</p>
+                    <p><strong>Email:</strong> <a href="mailto:admin@guideian.app">admin@guideian.app</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+4796694778">+47 966 94 778</a></p>
+                    <p><strong>Address:</strong> PO BOX 2, LOM 2688, Norway</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="main-footer"></div>
+    <script src="script.js"></script>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('main-nav').outerHTML = data; });
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('main-footer').outerHTML = data;
+          var yearSpan = document.getElementById('footer-year');
+          if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html> 
