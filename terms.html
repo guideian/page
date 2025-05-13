@@ -55,15 +55,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">guideian</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="privacy.html">Privacy</a>
-        </div>
-    </nav>
+    <div id="main-nav"></div>
 
     <main>
         <div class="terms-content">
@@ -126,15 +118,24 @@
             </div>
 
             <div class="last-updated">
-                Last updated: March 2024
+                Last updated: May 2025
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Guideian. All rights reserved.</p>
-    </footer>
-
+    <div id="main-footer"></div>
     <script src="script.js"></script>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('main-nav').outerHTML = data; });
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('main-footer').outerHTML = data;
+          var yearSpan = document.getElementById('footer-year');
+          if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html> 

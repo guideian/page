@@ -52,4 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Cookie/GDPR Notice
+    function showCookieBanner() {
+        if (localStorage.getItem('cookieConsent') === 'accepted') return;
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.innerHTML = `
+            <span>
+                This website uses cookies and stores data to enhance your experience and comply with GDPR. By continuing to use this site, you accept our <a href="privacy.html" style="color:var(--secondary-color);text-decoration:underline;">Privacy Policy</a>.
+            </span>
+            <button id="accept-cookies">Accept</button>
+        `;
+        document.body.appendChild(banner);
+        document.getElementById('accept-cookies').onclick = function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.remove();
+        };
+    }
+
+    window.addEventListener('DOMContentLoaded', showCookieBanner);
 }); 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal - Guideian</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .about-content {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .about-section {
+            margin-bottom: 40px;
+        }
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .about-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .legal-details {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-nav"></div>
+    <main>
+        <div class="about-content">
+            <h1>Legal</h1>
+            <div class="about-section">
+                <h2>Company Information</h2>
+                <p><strong>guideian.app</strong> is a geospatial and data intelligence platform dedicated to open science and spatial insights.</p>
+                <div class="legal-details">
+                    <p><strong>Legal Business Name:</strong> guideian.app</p>
+                    <p><strong>Website:</strong> <a href="https://guideian.app" style="color:var(--secondary-color);">guideian.app</a></p>
+                    <p><strong>Contact Email:</strong> <a href="mailto:admin@guideian.app" style="color:var(--secondary-color);">admin@guideian.app</a></p>
+                    <p><strong>Registered Address:</strong> [Your Company Address Here]</p>
+                    <p><strong>Responsible Person:</strong> [Your Name or Legal Representative]</p>
+                </div>
+            </div>
+            <div class="about-section">
+                <h2>Legal Notice</h2>
+                <p>guideian.app operates in accordance with applicable laws and regulations. For privacy, terms of service, and data usage, please refer to the respective pages linked in the navigation menu and footer.</p>
+            </div>
+        </div>
+    </main>
+    <div id="main-footer"></div>
+    <script src="script.js"></script>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('main-nav').outerHTML = data; });
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('main-footer').outerHTML = data;
+          var yearSpan = document.getElementById('footer-year');
+          if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html> 
