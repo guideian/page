@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data deletion instructions for guideian.app - Learn how to request deletion of your personal data.">
+    <title>Data Deletion - Guideian</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .about-content {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .about-section {
+            margin-bottom: 40px;
+        }
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .about-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .deletion-steps {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .deletion-steps ol {
+            margin-left: 20px;
+        }
+        .deletion-steps li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .email-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: opacity 0.2s;
+        }
+        .email-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-nav"></div>
+    <main>
+        <div class="about-content">
+            <h1>Data Deletion Request</h1>
+            <div class="about-section">
+                <h2>How to Request Data Deletion</h2>
+                <p>At guideian.app, we respect your privacy and your right to control your personal data. If you wish to delete your account and associated data, please follow the steps below:</p>
+                
+                <div class="deletion-steps">
+                    <ol>
+                        <li>Send an email to <a href="mailto:admin@guideian.app" style="color:var(--secondary-color);">admin@guideian.app</a> with the subject line "Data Deletion Request"</li>
+                        <li>Include the following information in your email:
+                            <ul>
+                                <li>Your full name</li>
+                                <li>The email address associated with your account</li>
+                                <li>Your phone number (if you used it to create an account)</li>
+                                <li>Any additional information that might help us identify your account</li>
+                            </ul>
+                        </li>
+                        <li>We will process your request within 30 days and send you a confirmation email once the deletion is complete</li>
+                    </ol>
+                </div>
+
+                <p>For immediate action, you can click the button below to send us a data deletion request email:</p>
+                <a href="mailto:admin@guideian.app?subject=Data%20Deletion%20Request" class="email-button">Request Data Deletion</a>
+
+                <p>Please note that some information may be retained for legal or business purposes as required by law. We will inform you if any data must be retained and the reason for retention.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>What Data Will Be Deleted</h2>
+                <p>Upon receiving your request, we will delete:</p>
+                <ul>
+                    <li>Your account information</li>
+                    <li>Personal preferences and settings</li>
+                    <li>Usage history and activity data</li>
+                    <li>Any stored audio recordings or content you've created</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <div id="main-footer"></div>
+    <script src="script.js"></script>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => { document.getElementById('main-nav').outerHTML = data; });
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('main-footer').outerHTML = data;
+          var yearSpan = document.getElementById('footer-year');
+          if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html> 
