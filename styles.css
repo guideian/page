@@ -393,4 +393,13 @@ footer {
 .benefit-item p {
     color: #4A5568;
     line-height: 1.5;
+}
+
+.ownership {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E2E8F0;
+    color: #4A5568;
+    font-size: 0.9rem;
+    text-align: center;
 } 
