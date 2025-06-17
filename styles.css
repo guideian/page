@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #1a1b1e;
+    --primary-color: #2D3250;
     --secondary-color: #00ff9d;
     --accent-color: #7b68ee;
-    --background-color: #0f0f0f;
+    --background-color: #1a1b1e;
     --text-color: #ffffff;
-    --card-bg: #1a1b1e;
-    --gradient-start: #1a1b1e;
-    --gradient-end: #2d2f34;
+    --card-bg: rgba(45, 50, 80, 0.6);
+    --gradient-start: #2D3250;
+    --gradient-end: #424769;
+    --gradient-accent: linear-gradient(135deg, #00ff9d 0%, #7b68ee 100%);
 }
 
 * {
@@ -88,7 +89,9 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(0, 255, 157, 0.1) 0%, transparent 70%);
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 157, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(123, 104, 238, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -128,36 +131,39 @@ h1 {
 }
 
 .cta-primary {
-    background-color: #2D3748;
+    background: var(--gradient-accent);
     color: white;
     border: none;
+    box-shadow: 0 4px 15px rgba(0, 255, 157, 0.2);
 }
 
 .cta-primary:hover {
-    background-color: #1A202C;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 157, 0.3);
 }
 
 .cta-secondary {
-    background-color: white;
-    color: #2D3748;
-    border: 2px solid #2D3748;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    backdrop-filter: blur(5px);
 }
 
 .cta-secondary:hover {
-    background-color: #F7FAFC;
+    background: rgba(0, 255, 157, 0.1);
     transform: translateY(-2px);
 }
 
 .cta-whatsapp {
-    background-color: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: white;
     border: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
 }
 
 .cta-whatsapp:hover {
-    background-color: #128C7E;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
 }
 
 .naturlens-hero {
@@ -240,17 +246,24 @@ h1 {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
     border-color: var(--secondary-color);
-    box-shadow: 0 8px 30px rgba(0, 255, 157, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 255, 157, 0.2);
+    background: linear-gradient(135deg, rgba(45, 50, 80, 0.8) 0%, rgba(66, 71, 105, 0.8) 100%);
 }
 
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 1rem;
+    background: var(--gradient-accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 255, 157, 0.2);
 }
 
 .about, .contact {
