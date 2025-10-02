@@ -160,7 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load navigation and footer
-    loadComponent('nav.html', 'main-nav');
+    loadComponent('nav.html', 'main-nav').then(() => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
     loadComponent('footer.html', 'main-footer').then(() => {
         const yearSpan = document.getElementById('footer-year');
         if (yearSpan) yearSpan.textContent = new Date().getFullYear();
