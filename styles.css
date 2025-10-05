@@ -576,17 +576,21 @@ footer {
         transform: translateY(8px);
     }
 
-    .nav-menu.active + .menu-toggle .hamburger {
+    .menu-toggle.active .hamburger {
         background-color: transparent;
     }
 
-    .nav-menu.active + .menu-toggle .hamburger::before {
+    .menu-toggle.active .hamburger::before {
         transform: rotate(45deg);
     }
 
-    .nav-menu.active + .menu-toggle .hamburger::after {
+    .menu-toggle.active .hamburger::after {
         transform: rotate(-45deg);
     }
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 .legal-container {
